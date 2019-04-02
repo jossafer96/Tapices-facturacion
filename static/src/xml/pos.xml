@@ -9,11 +9,7 @@
                     <div style="float:right;">
                     <t t-esc="order.name"/>
                     </div>
-                    <div style="width: 45%;float: left; ">
-                        
-                        <img src='/web/binary/company_logo' style="width:60%"/>
-
-                    </div>
+                    
                         <t t-if="widget.pos.company.name">
                             <div style="width:100%; overflow: hidden; font-size:20px;font-weight: bold;"><t t-esc="widget.pos.company.name"/></div>
                         </t>
