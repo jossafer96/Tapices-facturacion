@@ -1,4 +1,4 @@
-POS Ticket v11
+POS Tapices
 ==============
 
 Este módulo agregará  la información de la empresa en el recibo de POS. También se imprimirá el nombre del cliente.
