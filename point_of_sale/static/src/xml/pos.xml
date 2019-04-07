@@ -1449,12 +1449,14 @@
              <div>
                     <div style="width: 100%; float: left; padding: 20px 0px;">
                     <div style="float:right;">
-                    <t t-esc="order.name"/>
+                    <img style="width: 40%;padding: 2px 8px 0px 13px;float: right;" src="/web/binary/company_logo"/>
+                    <span style="float: right;padding-top: 19px;color: #fff;" class="placeholder-UsernameWidget"/>       
+                    FACTURA Nº: <br /><t t-esc="order.uid"/>
                     </div>
                     
                         <t t-if="widget.pos.company.name">
                             <div style="width:100%; overflow: hidden; font-size:20px;font-weight: bold;"><t t-esc="widget.pos.company.name"/></div>
-                        </t>
+                        </t><br />
                         Fecha: <t t-esc="moment().format('L LT')"/><br />
                         <t  t-if="widget.pos.company.x_rtn">
                         RTN: <t t-esc="widget.pos.company.x_rtn"/><br />
@@ -1473,11 +1475,19 @@
                         Del <t t-esc="widget.pos.company.x_rango1"/><br />
                         Al <t t-esc="widget.pos.company.x_rango2"/><br />
                         Fecha Limite de Emision: <t t-esc="widget.pos.company.x_fechalimite"/><br /><br />
+
+                        <u>Datos del Cliente </u>
+                        <br/>
+                        <br/>
                         <t t-if="order.get_client()">
-                        Cliente: <t t-esc="order.get_client().name"/><br />
+                        Cliente: 
+                        <t t-esc="order.get_client().name"/>
+                        <br/>
+                        Telefono: 
+                        <t t-esc="order.get_client().phone || order.get_client().mobile || ''"/>
                         </t>
-                        <t t-if="order.get_client() = null">
-                        Cliente: <t t-esc="Consumidor Final"/><br />
+                        <t t-else="">
+                        Cliente: Consumidor Final
                         </t>
                     </div>
                     
